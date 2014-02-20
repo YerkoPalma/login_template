@@ -1,0 +1,14 @@
+<% provide(:title, @user.name) %>
+
+<div class="row large">
+	<div class="small-4 medium-3 columns">
+		<%= render "shared/user_sidebar" %>
+	</div>
+	<div class="small-8 medium-9 columns" style="margin-top: 30px;">
+		<ul class="no-bullet">
+			<li><strong>Nombre:</strong> <%= @user.name %></li>
+			<li><strong>Mail:</strong> <%= @user.email %></li>
+			<li><strong>Se unio en:</strong> <%= @user.created_at %></li>
+		</ul>
+	</div>
+</div>

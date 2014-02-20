@@ -1,0 +1,26 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "My Site", root_path%></a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if signed_in? %>      
+          
+        <li><%= link_to current_user.name, current_user %></li>        
+        <li class="divider"></li>
+        <li class="has-form">
+          <%= link_to "Sign out", signout_path, method: "delete", class: "button success" %>
+        </li>     
+        
+      <% else %>
+
+        <%= render "forms/login" %>
+      <% end %>
+    </ul>    
+  </section>
+</nav>

@@ -1,0 +1,16 @@
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <li class="has-form">
+    <div class="row ">
+      <div class="large-6 small-6 columns">
+        <%= f.text_field :email, :placeholder => "Mail" %>
+      </div>
+      <div class="large-6 small-6 columns">
+        <%= f.password_field :password, :placeholder => "Password" %>
+      </div>
+    </div>
+  </li>
+  
+  <li class="has-form">
+    <%= f.submit "Sign in", class: "button success" %>
+  </li>
+<% end %>

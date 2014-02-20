@@ -1,0 +1,13 @@
+<% provide(:title, @user.name) %>
+
+<div class="row large">
+	<div class="small-4 medium-3 columns">
+		<%= render "shared/user_sidebar" %>
+	</div>
+	<div class="small-8 medium-9 columns">
+		<br><br>
+		<div class="row">					  
+		    <%= render "forms/edit_user" %>		  
+		</div>
+	</div>
+</div>

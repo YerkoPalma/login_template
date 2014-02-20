@@ -1,0 +1,33 @@
+<div class="sidebar">
+			<div class="header-block">				
+				<a class="th radius" href="#">
+					<% if @user.avatar.present? %>
+						<%= image_tag @user.avatar_url  %>
+					<% else %>
+						<%= image_tag "icon-user-default.png"  %>
+					<% end %>
+				</a>
+				<div class="user-info">
+					<h1><%= @user.name %></h1>
+					<h5><%= @user.email %></h5>
+				</div>
+			</div>
+			<nav>
+				<ul class="side-nav">
+					<li class="divider"></li>
+					<li>
+						<%= link_to "Settings", edit_user_path(current_user) %>
+					</li>
+					<li>
+						<% if current_user.admin? %>
+							<%= link_to "Users", users_url %><span class="label"><%= User.all.length %></span>
+						<% else %>
+							<a href="#">Menu 2<span class="label">1</span></a>
+						<% end %>
+					</li>
+					<li>
+						<a href="#">Menu 1</a>
+					</li>
+				</ul>
+			</nav>
+		</div>

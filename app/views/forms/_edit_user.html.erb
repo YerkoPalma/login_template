@@ -1,0 +1,22 @@
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+    	<%= render 'shared/error_messages' %>
+      <div class="small-offset-2  medium-offset-2 small-8 medium-8  columns" >
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+      
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.submit "Save changes", class: "button small right" %>
+      </div>
+      
+    <% end %>
